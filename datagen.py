@@ -279,7 +279,8 @@ if __name__ == "__main__":
     parser.add_argument("--root", default="/data")
     args = parser.parse_args()
     config["email"] = args.email
-    config["root"] = "/Users/avenkedeshwaran/Documents/IITM BSc/Diploma/TDS-projects/TDS-project-one/data"
+    # config["root"] = "/Users/avenkedeshwaran/Documents/IITM BSc/Diploma/TDS-project-1/data"
+    config["root"] = os.path.abspath(args.root)
 
     os.makedirs(config["root"], exist_ok=True)
 
