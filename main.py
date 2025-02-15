@@ -7,7 +7,7 @@ from fastapi.responses import PlainTextResponse
 import os
 import logging
 from typing import Dict, Callable
-from function_tasks import (
+from task_manager import (
 format_file_with_prettier,
 convert_function_to_openai_schema,
 query_gpt,

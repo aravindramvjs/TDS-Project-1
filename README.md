@@ -31,7 +31,7 @@ export
 
 ## Key Components
 
-### Task Functions (`function_tasks.py`)
+### Task Functions (`task_manager.py`)
 - Query execution and database interaction
 - Text extraction and embedding analysis
 - Image processing and OCR
@@ -86,7 +86,7 @@ export OPEN_AI_EMBEDDING_URL=https://aiproxy.sanand.workers.dev/openai/v1/embedd
      --get --data-urlencode "task=The file /data/dates.txt contains a list of dates, one per line. Count the number of Wednesdays in the list, and write just the number to /data/dates-wednesdays.txt"\
      -H "Content-Type: application/json" 
     ```
-    *Output*
+    **Output**
     ```json
     {"status":"success","message":"Task executed successfully"}
     ```

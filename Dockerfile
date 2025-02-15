@@ -13,7 +13,7 @@ ENV PATH="/root/.local/bin/:$PATH"
 WORKDIR /app
 
 COPY data/ /app/data/
-COPY datagen.py main.py function_tasks.py /app/
+COPY datagen.py main.py task_manager.py /app/
 
 RUN uv pip install fastapi uvicorn requests --system
 

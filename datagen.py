@@ -1,15 +1,3 @@
-# DISCLAIMER: THIS SCRIPT WILL CHANGE BEFORE THE EVALUATION. TREAT THIS AS A GUIDE.
-
-# Usage: uv run datagen.py <email>
-
-# /// script
-# requires-python = ">=3.13"
-# dependencies = [
-#     "faker",
-#     "pillow",
-# ]
-# ///
-
 import datetime
 import hashlib
 import json
