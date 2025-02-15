@@ -75,10 +75,26 @@ export OPEN_AI_EMBEDDING_URL=https://aiproxy.sanand.workers.dev/openai/v1/embedd
     uvicorn main:app --host 0.0.0.0 --port 8000
     ```
 
-3. Make requests:
+3. Make POST Request:
     ```bash
-    curl -X POST "http://localhost:8000/run?task=your-task-description"
-    curl -X GET "http://localhost:8000/read?path=output-file-path"
+    curl -X POST "http://127.0.0.1:8000/run" \
+        --get --data-urlencode "task=Format the contents of /data/format.md using prettier@3.4.2, updating the file in-place" \
+        -H "Content-Type: application/json" \
+        --data-raw '{"email":"23f3004068@ds.study.iitm.ac.in","file":"/data/format.md"}'
+
+    curl -X POST "http://127.0.0.1:8000/run" \
+     --get --data-urlencode "task=The file /data/dates.txt contains a list of dates, one per line. Count the number of Wednesdays in the list, and write just the number to /data/dates-wednesdays.txt"\
+     -H "Content-Type: application/json" 
+    ```
+    *Output*
+    ```json
+    {"status":"success","message":"Task executed successfully"}
+    ```
+4. Make GET Request
+    ```
+    curl -X GET  "http://127.0.0.1:8000/read?path=/data/format.md"
+
+    curl -X GET  "http://127.0.0.1:8000/read?path=/data/dates-wednesdays.txt"
     ```
 
 ## 🐳 Docker Container Image Support
@@ -91,7 +107,7 @@ The Docker image for this project is published on **Docker Hub**:
 
 🔗 **[Docker Hub: docaravind21/tds-project-1](https://hub.docker.com/repository/docker/docaravind21/tds-project-1/general)**
 
-### Usage 
+### Container Runtime usage 
 #### Docker 
 ```bash
 docker pull docaravind21/tds-project-1:latest
