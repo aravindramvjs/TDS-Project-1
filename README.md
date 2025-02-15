@@ -1,9 +1,4 @@
 # Pro-pilot LLM Project
-
-This project appears to be a versatile task execution system built with FastAPI. It provides a flexible framework for running various data processing and manipulation tasks through a REST API. Here's an overview of the project and its key features:
-
-## Pro-pilot LLM Overview
-
 The name of this LLM is Pro-pilot is a shortform of processing pilot. The core of the project is a FastAPI application that exposes endpoints for executing different types of tasks. These tasks are defined as functions and can be dynamically process and executed based on user input.
 
 ## Key Features
