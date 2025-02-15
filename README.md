@@ -81,15 +81,35 @@ export OPEN_AI_EMBEDDING_URL=https://aiproxy.sanand.workers.dev/openai/v1/embedd
     curl -X GET "http://localhost:8000/read?path=output-file-path"
     ```
 
-## 🐳 Docker Image
+## 🐳 Docker Container Image Support
+
+- Handles both local and Docker environments
+- Path management via `ensure_local_path` function
+- Codespaces compatibility
 
 The Docker image for this project is published on **Docker Hub**:
 
 🔗 **[Docker Hub: docaravind21/tds-project-1](https://hub.docker.com/repository/docker/docaravind21/tds-project-1/general)**
-## Container Support
-- Handles both local and Docker environments
-- Path management via `ensure_local_path` function
-- Codespaces compatibility
+
+### Usage 
+#### Docker 
+```bash
+docker pull docaravind21/tds-project-1:latest
+docker run -p 8000:8000 \
+  -e OPEN_AI_EMBEDDING_URL="$OPEN_AI_EMBEDDING_URL" \
+  -e OPEN_AI_PROXY_URL="$OPEN_AI_PROXY_URL" \
+  -e OPEN_AI_PROXY_TOKEN="$OPEN_AI_PROXY_TOKEN" \
+  docaravind21/tds-project-1
+```
+#### Podman
+```bash
+podman pull docaravind21/tds-project-1:latest
+podman run -p 8000:8000 \
+  -e OPEN_AI_EMBEDDING_URL="$OPEN_AI_EMBEDDING_URL" \
+  -e OPEN_AI_PROXY_URL="$OPEN_AI_PROXY_URL" \
+  -e OPEN_AI_PROXY_TOKEN="$OPEN_AI_PROXY_TOKEN" \
+  docaravind21/tds-project-1
+```
 
 
 
